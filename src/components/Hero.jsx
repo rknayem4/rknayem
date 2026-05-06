@@ -41,7 +41,7 @@ const Hero = () => {
         const angle = (index / iconsRef.current.length) * Math.PI * 2;
         const radiusX = 200; // Wider orbit
         const radiusY = 220; // Slightly taller orbit for 3D feel
-        
+
         gsap.set(icon, {
           x: Math.cos(angle) * radiusX,
           y: Math.sin(angle) * radiusY,
@@ -88,22 +88,26 @@ const Hero = () => {
   }, []);
 
   return (
-    <section ref={containerRef} className="relative min-h-screen flex items-center max-w-7xl mx-auto px-6 py-16 overflow-hidden">
+    <section
+      ref={containerRef}
+      className="relative min-h-screen flex items-center max-w-7xl mx-auto px-6 py-16 overflow-hidden"
+    >
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <div className="z-10">
           <span className="text-primary font-label mb-4 block hero-anim">
             AVAILABLE FOR PROJECTS
           </span>
-          <h1 className="font-h1 text-6xl md:text-8xl text-on-surface mb-6 hero-anim">
-            Hi, I&apos;m <span className="text-primary-container">R.K.Nayem</span>
+          <h1 className="font-h1 text-3xl  md:text-4xl text-on-surface mb-6 ">
+            Hi, I&apos;m{" "} <br />
+            <span className="text-primary-container font-extrabold text-6xl  lg:text-8xl md:text-6xl">R.K.Nayem</span>
           </h1>
-          <p className="text-3xl md:text-4xl font-h2 text-on-surface-variant mb-6 hero-anim">
+          <p className="text-3xl md:text-4xl font-h2  text-on-surface-variant mb-6 hero-anim">
             MERN Stack Developer
           </p>
           <p className="font-body-lg text-lg text-on-surface-variant mb-8 max-w-lg hero-anim">
-            I build robust, scalable, and high-performance full-stack applications
-            with a focus on modern user experiences and clean engineering
-            practices.
+            I build robust, scalable, and high-performance full-stack
+            applications with a focus on modern user experiences and clean
+            engineering practices.
           </p>
           <div className="flex flex-wrap gap-4 hero-anim">
             <button className="bg-primary-container text-on-primary-container px-8 py-3 rounded-xl font-bold text-lg glow-accent transition-all">
@@ -117,9 +121,21 @@ const Hero = () => {
           {/* Social Links */}
           <div className="flex gap-6 mt-8 hero-anim">
             {[
-              { icon: FaGithub, link: "https://github.com/rknayem4", color: "hover:text-white" },
-              { icon: FaLinkedin, link: "https://www.linkedin.com/in/rknayem", color: "hover:text-[#0077B5]" },
-              { icon: FaXTwitter, link: "https://x.com/rk_nayem4", color: "hover:text-[#1DA1F2]" },
+              {
+                icon: FaGithub,
+                link: "https://github.com/rknayem4",
+                color: "hover:text-white",
+              },
+              {
+                icon: FaLinkedin,
+                link: "https://www.linkedin.com/in/rknayem",
+                color: "hover:text-[#0077B5]",
+              },
+              {
+                icon: FaXTwitter,
+                link: "https://x.com/rk_nayem4",
+                color: "hover:text-[#1DA1F2]",
+              },
             ].map((social, i) => (
               <a
                 key={i}
@@ -142,22 +158,22 @@ const Hero = () => {
               ref={(el) => (iconsRef.current[i] = el)}
               className="absolute p-4 glass-card rounded-2xl z-20 shadow-2xl border border-white/10"
             >
-              <item.component 
-                style={{ color: item.color }} 
-                className="text-3xl md:text-4xl" 
+              <item.component
+                style={{ color: item.color }}
+                className="text-3xl md:text-4xl"
               />
             </div>
           ))}
 
           {/* Profile Photo */}
-          <div 
+          <div
             ref={profileRef}
             className="relative p-2 rounded-full border-4 border-primary-container/30 bg-surface-container-low shadow-[0_0_60px_rgba(39,146,255,0.3)] z-10"
           >
             <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-surface-container-highest">
               <Image
-                src="/profile.png"
-                alt="Sajid Yaqub Profile"
+                src="/profile-.png"
+                alt="R.K. Nayem Profile"
                 width={400}
                 height={400}
                 loading="eager"
